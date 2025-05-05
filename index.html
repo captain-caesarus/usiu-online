@@ -1,1 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SME Tools</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>SME Tools Collection</h1>
+        <p>A suite of tools for Subject Matter Experts to streamline educational tasks.</p>
+    </header>
+    <main>
+        <section>
+            <h2>About This Project</h2>
+            <p>
+                This repository hosts a collection of tools designed for Subject Matter Experts (SMEs) to enhance teaching and content creation. Each tool is a Python notebook that runs in Google Colab, providing user-friendly interfaces for tasks like transcription, analysis, and more.
+            </p>
+            <p>
+                Use the carousel below to explore available tools. Click "Open in Google Colab" to use a tool or download its source code for offline use.
+            </p>
+        </section>
+        <section>
+            <h2>Available Tools</h2>
+            <div class="carousel">
+                <div class="carousel-inner">
+                    <!-- Tool 1: Transcription Notebook -->
+                    <div class="carousel-item active">
+                        <div class="card">
+                            <h3>Transcription Notebook</h3>
+                            <p>
+                                Transcribe audio from video lectures (YouTube or uploaded files) and generate formatted Word documents with course metadata.
+                            </p>
+                            <p><strong>Features:</strong> Interactive form, Whisper model transcription, YouTube support.</p>
+                            <a href="https://colab.research.google.com/github/username/sme-tools/blob/main/transcription_notebook.py" target="_blank" class="button">Open in Google Colab</a>
+                            <a href="transcription_notebook.py" download class="button secondary">Download</a>
+                            <a href="https://github.com/username/sme-tools" target="_blank" class="button secondary">View Repository</a>
+                        </div>
+                    </div>
+                    <!-- Tool 2: Placeholder -->
+                    <div class="carousel-item">
+                        <div class="card">
+                            <h3>Tool 2 (Placeholder)</h3>
+                            <p>
+                                A placeholder for a future tool. Replace this with your tool's description and links.
+                            </p>
+                            <p><strong>Features:</strong> To be defined.</p>
+                            <a href="#" class="button disabled">Open in Google Colab (Coming Soon)</a>
+                            <a href="#" class="button secondary disabled">Download (Coming Soon)</a>
+                            <a href="https://github.com/username/sme-tools" target="_blank" class="button secondary">View Repository</a>
+                        </div>
+                    </div>
+                    <!-- Tool 3: Placeholder -->
+                    <div class="carousel-item">
+                        <div class="card">
+                            <h3>Tool 3 (Placeholder)</h3>
+                            <p>
+                                A placeholder for another future tool. Customize this card with your tool's details.
+                            </p>
+                            <p><strong>Features:</strong> To be defined.</p>
+                            <a href="#" class="button disabled">Open in Google Colab (Coming Soon)</a>
+                            <a href="#" class="button secondary disabled">Download (Coming Soon)</a>
+                            <a href="https://github.com/username/sme-tools" target="_blank" class="button secondary">View Repository</a>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-prev">❮</button>
+                <button class="carousel-next">❯</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Created by [Your Name] | Hosted on <a href="https://pages.github.com">GitHub Pages</a></p>
+    </footer>
+    <script>
+        const prevButton = document.querySelector('.carousel-prev');
+        const nextButton = document.querySelector('.carousel-next');
+        const carouselInner = document.querySelector('.carousel-inner');
+        const items = document.querySelectorAll('.carousel-item');
+        let currentIndex = 0;
 
+        function updateCarousel() {
+            carouselInner.style.transform = `translateX(-${currentIndex * 100}%)`;
+            items.forEach((item, index) => {
+                item.classList.toggle('active', index === currentIndex);
+            });
+        }
+
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + items.length) % items.length;
+            updateCarousel();
+        });
+
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % items.length;
+            updateCarousel();
+        });
+
+        updateCarousel(); // Initialize carousel
+    </script>
+</body>
+</html>
